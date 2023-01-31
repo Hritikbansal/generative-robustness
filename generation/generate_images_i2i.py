@@ -67,11 +67,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-'''
-accelerate launch --num_cpu_threads_per_process 8 --main_process_port 9807 -m generation.generate_images_i2i --batch_size 4 --data_dir /home/data/datasets/ImageNet100/Data/ --save_image_gen /home/data/datasets/ImageNet100/I2ICaptionDataset/ --diversity
-'''
-
-'''
-accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images_i2i --batch_size 12 --data_dir /home/data/datasets/ImageNet1K/ILSVRC/Data/CLS-LOC/ --save_image_gen /home/data/datasets/ImageNet1K/ILSVRC/Data/I2ICaptionsVariation/ --split val --diversity
-'''
