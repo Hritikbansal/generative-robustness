@@ -7,9 +7,9 @@ This repo contains the code for the experiments in the 'Leaving Reality to Imagi
 
 ## Data Generation Using Stable Diffusion
 
-(Stable Diffusion)[https://github.com/CompVis/stable-diffusion] is a popular text-to-image generative model. Most of the code is adapted from the very popular (diffusers)[https://github.com/huggingface/diffusers] library from HuggingFace.
+[Stable Diffusion](https://github.com/CompVis/stable-diffusion) is a popular text-to-image generative model. Most of the code is adapted from the very popular [diffusers](https://github.com/huggingface/diffusers) library from HuggingFace.
 
-However, it might not be straightforward to generate images from Stable Diffusion on multiple GPUs. To that end, we use the (accelerate)[https://huggingface.co/docs/accelerate/index] package from Huggingface.
+However, it might not be straightforward to generate images from Stable Diffusion on multiple GPUs. To that end, we use the [accelerate](https://huggingface.co/docs/accelerate/index) package from Huggingface.
 
 ### Requirements
  
@@ -39,8 +39,8 @@ However, it might not be straightforward to generate images from Stable Diffusio
 
 ### Files
 
-1. (generate_images_captions)[generation/generate_images_captions.py] generates the images conditioned on the diverse text prompts (__SD Labels__).
-2. (generate_images)[generation/generate_images.py] generates the images conditioned on the images (__SD Images__).
-3. (generate_images_i2i)[generation.generate_images_i2i.py] generates the images conditioned on the encoded images and text (__SD Labels and Images__).
+1. [generate_images_captions](generation/generate_images_captions.py) generates the images conditioned on the diverse text prompts (__SD Labels__).
+2. [generate_images](generation/generate_images.py) generates the images conditioned on the images (__SD Images__).
+3. [generate_images_i2i](generation.generate_images_i2i.py) generates the images conditioned on the encoded images and text (__SD Labels and Images__).
 
 ### Commands
