@@ -1,6 +1,4 @@
 # leaving_reality_to_imagination
-Github Repo to generate images from Stable Diffusion
-
 
 This repo contains the code for the experiments in the 'Leaving Reality to Imagination: Robust Classification via Generated Datasets' paper.
 
@@ -43,4 +41,18 @@ However, it might not be straightforward to generate images from Stable Diffusio
 2. [generate_images](generation/generate_images.py) generates the images conditioned on the images (__SD Images__).
 3. [generate_images_i2i](generation.generate_images_i2i.py) generates the images conditioned on the encoded images and text (__SD Labels and Images__).
 
+Move the [classes.py](generation/classes.py) and [folder_to_class.csv](generation/folder_to_class.csv) to the `imagenet_dir`.
+
 ### Commands
+
+```
+accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images_captions --batch_size 8 --data_dir <imagenet_dir> --save_image_gen <save dir> --diversity --split val
+```
+
+```
+accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images --batch_size 2 --eval_test_data_dir <imagenet_dir> --save_image_gen <save dir> --split val
+```
+
+```
+accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images_i2i --batch_size 12 --data_dir <imagenet_dir> --save_image_gen <save dir> --split val --diversity
+```

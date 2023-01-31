@@ -60,6 +60,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-'''
-accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images_captions --batch_size 4 --eval_test_data_dir /data0/datasets/ImageNet1K/ILSVRC/Data/CLS-LOC/ --eval_save_image_gen /data0/datasets/ImageNet1K/ILSVRC/Data/ImageVariation/
-'''
