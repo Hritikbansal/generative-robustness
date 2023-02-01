@@ -1,4 +1,4 @@
-# leaving_reality_to_imagination
+# Generative Robustness
 
 This repo contains the code for the experiments in the 'Leaving Reality to Imagination: Robust Classification via Generated Datasets' paper.
 
