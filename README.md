@@ -3,6 +3,29 @@
 This repo contains the code for the experiments in the 'Leaving Reality to Imagination: Robust Classification via Generated Datasets' paper.
 
 
+## Link to ImageNet-G dataset
+
+You can download the ImageNet-1K-G-v1 dataset from [here](https://drive.google.com/drive/folders/1-jLyiJ_S-VZMS5zQNR6e1xDOAkAVJxvs?usp=share_link). Even though we discuss three variants of ImageNet-1K-G-v1 in the paper, we make generations using captions of the class labels (*SD-Labels*) public for novel usecases by the community.
+
+Structure of the dataset looks like:
+
+* train_captions.csv
+* train (1000 folders)
+    * n01440764 (1300 images)
+        * image1.jpeg
+        *  .
+        * imageN.jpeg
+    * .
+    * .
+* val_captions.csv 
+* val (1000 images)
+    * n01440764 (1300 images)
+        * image1.jpeg
+        *  .
+        * imageN.jpeg
+    * .
+    * .
+
 ## Data Generation Using Stable Diffusion
 
 [Stable Diffusion](https://github.com/CompVis/stable-diffusion) is a popular text-to-image generative model. Most of the code is adapted from the very popular [diffusers](https://github.com/huggingface/diffusers) library from HuggingFace.
@@ -111,4 +134,5 @@ We use (a) ImageNet-Sketch, (b) ImageNet-R, (c) ImageNet-V2, and (d) ObjectNet i
 
 1. [rename_imagenetv2](utils/rename_imagenet_v2.py) renames the imagenetv2 folders that are original named based on indices 0-1000 to original imagenet folder names n0XXXXX.
 2. [subset_objectnet_im](utils/subset_objectnet_im.py) is used to create a subset of ObjectNet classes that overlap with ImageNet-100/1000. 
+
 
