@@ -19,7 +19,7 @@ Structure of the dataset looks like:
     * .
 * val_captions.csv 
 * val (1000 images)
-    * n01440764 (1300 images)
+    * n01440764 (50 images)
         * image1.jpeg
         *  .
         * imageN.jpeg
