@@ -9,6 +9,7 @@ You can download the ImageNet-1K-G-v1 dataset from [here](https://drive.google.c
 
 Structure of the dataset looks like:
 
+```
 * train_captions.csv
 * train (1000 folders)
     * n01440764 (1300 images)
@@ -25,6 +26,7 @@ Structure of the dataset looks like:
         * imageN.jpeg
     * .
     * .
+```
 
 ## Data Generation Using Stable Diffusion
 
