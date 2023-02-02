@@ -5,7 +5,7 @@ This repo contains the code for the experiments in the 'Leaving Reality to Imagi
 
 ## Link to ImageNet-G dataset
 
-You can download the ImageNet-1K-G-v1 dataset from [here](https://drive.google.com/drive/folders/1-jLyiJ_S-VZMS5zQNR6e1xDOAkAVJxvs?usp=share_link). Even though we discuss three variants of ImageNet-1K-G-v1 in the paper, we make generations using captions of the class labels (*SD-Labels*) public for novel usecases by the community.
+You can download the `ImageNet-1K-G-v1` dataset from [here](https://drive.google.com/drive/folders/1-jLyiJ_S-VZMS5zQNR6e1xDOAkAVJxvs?usp=share_link). Even though we discuss three variants of ImageNet-1K-G-v1 in the paper, we make generations using captions of the class labels (*SD-Labels*) public for novel usecases by the community.
 
 Structure of the dataset looks like:
 
