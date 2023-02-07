@@ -1,6 +1,6 @@
 # Generative Robustness
 
-This repo contains the code for the experiments in the 'Leaving Reality to Imagination: Robust Classification via Generated Datasets' paper.
+This repo contains the code for the experiments in the 'Leaving Reality to Imagination: Robust Classification via Generated Datasets' paper. Arxiv link: [https://arxiv.org/pdf/2302.02503.pdf](https://arxiv.org/pdf/2302.02503.pdf)
 
 
 ## Link to ImageNet-1K-G-v1 dataset
