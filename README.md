@@ -3,14 +3,15 @@
 This repo contains the code for the experiments in the 'Leaving Reality to Imagination: Robust Classification via Generated Datasets' paper. Arxiv link: [https://arxiv.org/pdf/2302.02503.pdf](https://arxiv.org/pdf/2302.02503.pdf)
 
 
-## Link to ImageNet-1K-G-v1 dataset
+## Link to Generated ImageNet-1K dataset
 
-You can download the `ImageNet-1K-G-v1` dataset from [here](https://drive.google.com/drive/folders/1-jLyiJ_S-VZMS5zQNR6e1xDOAkAVJxvs?usp=share_link). Even though we discuss three variants of ImageNet-1K-G-v1 in the paper, we make generations using captions of the class labels (*SD-Labels*) public for novel usecases by the community.
+You can download the `Base-Generated-ImageNet-1K` dataset from [here](https://drive.google.com/drive/folders/1-jLyiJ_S-VZMS5zQNR6e1xDOAkAVJxvs?usp=sharing). Even though we discuss three variants of generated data in the paper, we make generations using captions of the class labels public for novel usecases by the community.
+
+You can download the `Finetuned-Generated-ImageNet-1K` dataset from [here](https://drive.google.com/drive/folders/1xVBcCrae1JrmOCoHHNWCw5UN6XAOoupk?usp=sharing). 
 
 Structure of the dataset looks like:
 
 ```
-* train_captions.csv
 * train (1000 folders)
     * n01440764 (1300 images)
         * image1.jpeg
@@ -18,7 +19,6 @@ Structure of the dataset looks like:
         * imageN.jpeg
     * .
     * .
-* val_captions.csv 
 * val (1000 images)
     * n01440764 (50 images)
         * image1.jpeg
@@ -27,6 +27,17 @@ Structure of the dataset looks like:
     * .
     * .
 ```
+
+## Finetuning Stable Diffusion on the Real ImageNet-1K
+
+We provide the finetuning details and as well as the finetuned Stable Diffusion model at [https://huggingface.co/hbXNov/ucla-mint-finetune-sd-im1k](https://huggingface.co/hbXNov/ucla-mint-finetune-sd-im1k).
+
+Colab Notebook: [here](https://colab.research.google.com/drive/1I2IO8tD_l9JdCRJHOqlAP6ojMPq_BsoR?usp=sharing)
+
+The finetuning code could be found in this folder: [sd_finetune](sd_finetune). Most of this code is adopted from the `diffusers` library - [text-to-image](https://github.com/huggingface/diffusers/tree/main/examples/text_to_image). We are really thankful to the authors!!
+
+
+*The rest of the README will focus on generating data from Stable Diffusion in a zero-shot manner, and training ImageNet classifiers efficiently using FFCV.*
 
 ## Data Generation Using Stable Diffusion
 
@@ -62,9 +73,9 @@ However, it might not be straightforward to generate images from Stable Diffusio
 
 ### Files
 
-1. [generate_images_captions](generation/generate_images_captions.py) generates the images conditioned on the diverse text prompts (__SD Labels__).
-2. [generate_images](generation/generate_images.py) generates the images conditioned on the images (__SD Images__).
-3. [generate_images_i2i](generation.generate_images_i2i.py) generates the images conditioned on the encoded images and text (__SD Labels and Images__).
+1. [generate_images_captions](generation/generate_images_captions.py) generates the images conditioned on the diverse text prompts (Class Labels).
+2. [generate_images](generation/generate_images.py) generates the images conditioned on the images (Real Images).
+3. [generate_images_i2i](generation.generate_images_i2i.py) generates the images conditioned on the encoded images and text (Real Images and Class Labels).
 4. [conditional ldm](generation/conditional_ldm.py) generates images from the class-conditional latent diffusion model. You can download the model ckpt from [Stable Diffusion](https://github.com/CompVis/stable-diffusion) repo.
 
 Move the [classes.py](generation/classes.py) and [folder_to_class.csv](generation/folder_to_class.csv) to the `imagenet_dir`.
