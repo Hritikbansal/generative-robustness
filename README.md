@@ -86,19 +86,19 @@ Move the [classes.py](generation/classes.py) and [folder_to_class.csv](generatio
 
 ### Commands
 
-```
+```python
 accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images_captions --batch_size 8 --data_dir <imagenet_dir> --save_image_gen <save dir> --diversity --split val
 ```
 
-```
+```python
 accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images --batch_size 2 --eval_test_data_dir <imagenet_dir> --save_image_gen <save dir> --split val
 ```
 
-```
+```python
 accelerate launch --num_cpu_threads_per_process 8 -m generation.generate_images_i2i --batch_size 12 --data_dir <imagenet_dir> --save_image_gen <save dir> --split val --diversity
 ```
 
-```
+```python
 accelerate launch --num_cpu_threads_per_process 8 conditional_ldm.py --config cin256-v2.yaml --checkpoint <model checkpoint> --save_image_gen <save dir>
 ```
 
@@ -130,13 +130,13 @@ Note that we prepare the dataset with the following FFCV configuration:
 
 ### Training
 
-```
+```python
 CUDA_VISIBLE_DEVICES=0,1,2,3,4 python train_imagenet.py --config-file resnet_configs/resnext50.yaml --data.train_dataset=<path to train ffcv> --data.val_dataset=<path to validation ffcv> --data.num_workers=8 --logging.folder=<logging folder> --model.num_classes=100 (if imagenet 100) --training.distributed=1 --dist.world_size=5 
 ```
 
 ### Evaluation
 
-```
+```python
 CUDA_VISIBLE_DEVICES=0,1,2,3,4 python train_imagenet.py --config-file resnet_configs/rn18_88_epochs.yaml --data.train_dataset=<path to train ffcv> --data.val_dataset=<path to validation ffcv> --data.num_workers=8 --training.path=<path to final_weights.pt> --model.num_classes=1000 --training.distributed=1 --dist.world_size=5 --training.eval_only=1
 ```
 
