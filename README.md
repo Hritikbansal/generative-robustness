@@ -2,6 +2,8 @@
 
 This repo contains the code for the experiments in the 'Leaving Reality to Imagination: Robust Classification via Generated Datasets' paper. Arxiv link: [https://arxiv.org/pdf/2302.02503.pdf](https://arxiv.org/pdf/2302.02503.pdf)
 
+[Colab](https://colab.research.google.com/drive/1I2IO8tD_l9JdCRJHOqlAP6ojMPq_BsoR?usp=sharing)
+
 <h1 align="center"><img src="figure.png" width="75%"></h1>
 
 Accepted as Oral Presentation at RTML ICLR 2023.
